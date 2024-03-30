@@ -64,9 +64,9 @@ const SearchParams = () => {
             }}
             >
             <option />
-            {breed.map(breed => {
-              <option key={breed}>{breed}</option>
-            })};
+            {breeds.map(breed => (
+            <option key={breed}>{breed}</option>
+            ))}
             </select>
         </label>
         <button>Sumbit</button>
