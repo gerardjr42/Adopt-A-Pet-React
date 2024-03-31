@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Results from "./Results";
-import useBreedList from "../useBreedList";
+import useBreedList from '../useBreedList'
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
@@ -27,11 +27,12 @@ const SearchParams = () => {
       <form onSubmit={(e) => {
         e.preventDefault();
         requestPets();
-      }}>
+      }}
+      >
         <label htmlFor="location">
           Location
           <input 
-            onChange={(e)=> setLocation(e.target.value)} 
+            onChange={(e) => setLocation(e.target.value)} 
             id="location"
             value={location}
             placeholder="Location"
@@ -45,18 +46,19 @@ const SearchParams = () => {
             onChange={(e) => {
               setAnimal(e.target.value);
               setBreed("");
-            }}>
+            }}
+          >
             <option />
             {ANIMALS.map((animal) => (
               <option key={animal}>{animal}</option>
             ))}
-            </select>
+          </select>
         </label>
         <label htmlFor="breed">
           Breed
           <select 
             id="breed"
-            disabled={breed.length ===0}
+            disabled={breeds.length === 0}
             style={{cursor: breeds.length === 0 ? "not-allowed" : "auto"}}
             value={breed}
             onChange={(e) => {
@@ -66,7 +68,7 @@ const SearchParams = () => {
             <option />
             {breeds.map(breed => (
             <option key={breed}>{breed}</option>
-            ))}
+            ))};
             </select>
         </label>
         <button>Sumbit</button>
